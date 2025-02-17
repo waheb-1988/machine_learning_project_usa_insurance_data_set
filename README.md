@@ -22,25 +22,25 @@ The dataset used in this project contains information about insurance policyhold
 ## Project Structure  
 machine_learning_project_usa_insurance_data_set/
 │
-├── data/ # Dataset and data processing scripts
-│ └── insurance.csv # USA Insurance dataset
+├── data/                     # Dataset and data processing scripts
+│   └── insurance.csv         # USA Insurance dataset
 │
-├── notebooks/ # Jupyter notebooks for EDA and modeling
-│ ├── 01_EDA.ipynb # Exploratory Data Analysis
-│ └── 02_Modeling.ipynb # Machine learning models
+├── notebooks/                # Jupyter notebooks for EDA and modeling
+│   ├── 01_EDA.ipynb          # Exploratory Data Analysis
+│   └── 02_Modeling.ipynb     # Machine learning models
 │
-├── models/ # Saved machine learning models
-│ └── linear_regression.pkl
-│ └── random_forest.pkl
+├── models/                   # Saved machine learning models
+│   ├── linear_regression.pkl
+│   └── random_forest.pkl
 │
-├── src/ # Source code for data processing and modeling
-│ ├── data_preprocessing.py
-│ └── model_training.py
+├── src/                      # Source code for data processing and modeling
+│   ├── data_preprocessing.py # Data cleaning and feature engineering
+│   └── model_training.py     # Model training and evaluation
 │
-├── results/ # Analysis results and model performance metrics
-│ └── model_comparison.png
+├── results/                  # Analysis results and model performance metrics
+│   └── model_comparison.png
 │
-└── README.md # Project overview and documentation
+└── README.md                 # Project overview and documentation
 
 
 ## Technologies Used  
