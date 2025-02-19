@@ -53,3 +53,16 @@ cs = OutlierReplaceWithMedian()
 df = cs.read_file('insurance.csv')      
     
 print(df.head())
+
+
+# Outliers replace
+# Inpute missing vale
+# Processing steps
+# Onehot and Catencawdin
+# Pipeline
+# Model
+# hyper
+# Save
+# test
+# Flask
+# Streamlit
