@@ -66,3 +66,7 @@ print(df.head())
 # test
 # Flask
 # Streamlit
+# Requiremet file 
+# Env file 
+# Chatbot
+
