@@ -51,13 +51,17 @@ class OutlierReplaceWithMedian(BaseEstimator, TransformerMixin):
 # Pipeline............> Done
 # Model............> Done
 # save ............> Done
-# hyper
-# Save
+# hyper............> Done.........................> Still some issue I need to take a care about them
+# Save............> Done
 # test............> Done
-# Flask
+# Flask..........
+# Streamlit......
+# Requiremet file..
+# Env file....... 
+# Chatbot.........> Can take the image and interparte the result and the model also traitement
 # Fast api
-# Streamlit
-# Requiremet file 
-# Env file 
-# Chatbot
-
+# Docker
+# Pytest 
+# Rabitmq
+# Sql connection
+# Mongo db

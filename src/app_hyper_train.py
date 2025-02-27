@@ -1,19 +1,18 @@
 from sklearn.ensemble import RandomForestRegressor
 from data_import import read_file
 from hyper_model import hyperparameter_tuning
-
+from models import MLModels
 # Read Data
 df = read_file('insurance.csv')
 
-# Define parameter grid for Random Forest
-random_forest_param_grid = {
-    'model__n_estimators': [100, 200, 500],
-    'model__max_depth': [None, 10, 20, 30, 50],
-    'model__min_samples_split': [2, 5, 10],
-    'model__min_samples_leaf': [1, 2, 4],
-    'model__max_features': ['sqrt', 'log2', None],  # Fixed here
-    'model__criterion': ['squared_error', 'absolute_error']
-}
+# Create an instance of the MLModels class for Ridge Regressor
+ml_model = MLModels('lasso')
+
+# Get the Ridge model
+model = ml_model.get_model()
+
+# Access the parameter grid for Ridge Regressor from the MLModels class
+param_grid = ml_model.lasso_param_grid
 
 # Call the hyperparameter tuning function
-hyperparameter_tuning(RandomForestRegressor(random_state=42), random_forest_param_grid, df)
+hyperparameter_tuning(model, param_grid, df)
