@@ -1,12 +1,6 @@
 
 from sklearn.base import BaseEstimator, TransformerMixin
-import pandas as pd
 import numpy as np 
-import pathlib
-import os
-import seaborn as sns
-import matplotlib.pyplot as plt
-from scipy.stats import pearsonr
 
 class OutlierReplaceWithMedian(BaseEstimator, TransformerMixin):
     

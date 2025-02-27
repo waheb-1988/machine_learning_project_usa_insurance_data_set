@@ -10,6 +10,7 @@ from label_enco import CustomLabelEncoder
 def build_pipeline(model):
     """
     Build a pipeline with the given model as the final step.
+    If model is None, return only the preprocessing pipeline.
     
     Parameters:
         model: The machine learning model to be used in the pipeline.
@@ -18,7 +19,6 @@ def build_pipeline(model):
         Pipeline: A scikit-learn pipeline.
     """
     # Column Transformer for Encoding
-    print('model_name:',model,"#"*15)
     preprocessor = ColumnTransformer(
         transformers=[
             ('label', CustomLabelEncoder(), ['sex']),
@@ -28,18 +28,21 @@ def build_pipeline(model):
         remainder='passthrough'  # Keep other columns as they are
     )
 
-    # Complete Pipeline
-    pipeline = Pipeline(steps=[
-        ('outlier_handling', OutlierReplaceWithMedian(threshold=3)),
+    # Complete Preprocessing Pipeline
+    preprocessing_pipeline = Pipeline(steps=[
+        ('outlier_handling', OutlierReplaceWithMedian(threshold=1.5)),
         ('missing_value_handling', MissingValueHandler()),
         ('feature_engineering', FeatureEngineering(poly_degree=2)),
         ('preprocessor', preprocessor),
-        ('scaler', StandardScaler()),
-        ('model', model)  # Model passed as parameter
+        ('scaler', StandardScaler())
     ])
     
-    return pipeline
-
-
-            
-            
+    # Return only the preprocessing pipeline if model is None
+    if model is None:
+        return preprocessing_pipeline
+    
+    # Otherwise, return full pipeline with model
+    return Pipeline(steps=[
+        ('preprocessing', preprocessing_pipeline),
+        ('model', model)
+    ])

@@ -19,11 +19,3 @@ class CustomLabelEncoder(BaseEstimator, TransformerMixin):
         for column, le in self.label_encoders.items():
             X_transformed[column] = le.transform(X[column])
         return X_transformed
-
-# Use the custom transformer in ColumnTransformer
-preprocessor = ColumnTransformer(
-    transformers=[
-        ('label', CustomLabelEncoder(), ['sex'])  # Custom label encoding for 'sex'
-    ],
-    remainder='passthrough'  # Keep other columns unchanged
-)
