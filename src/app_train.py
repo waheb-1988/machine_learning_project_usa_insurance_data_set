@@ -1,17 +1,9 @@
 from data_import import read_file
 from train_model import train_and_evaluate
-from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor
-from xgboost import XGBRegressor
 from pipeline import build_pipeline
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.model_selection import GridSearchCV
-from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
-import numpy as np
-import time     
-from sklearn.model_selection import train_test_split
-import joblib
-import os
+
 # Read Data
 df = read_file('insurance.csv')
 
